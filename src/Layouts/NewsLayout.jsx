@@ -6,7 +6,7 @@ import LeftNavbar from '../Pages/Shared/LeftNavbar/LeftNavbar';
 import RightNavbar from '../Pages/Shared/RightNavbar/RightNavbar';
 import { Outlet } from 'react-router-dom';
 
-const Main = () => {
+const NewsLayout = () => {
     return (
         <div>
             <Header></Header>
@@ -14,8 +14,8 @@ const Main = () => {
             <Container>
 
                 <Row>
-                    <Col lg={3}><LeftNavbar></LeftNavbar></Col>
-                    <Col lg={6}><Outlet></Outlet></Col>
+
+                    <Col lg={9}><Outlet></Outlet></Col>
                     <Col lg={3}><RightNavbar></RightNavbar></Col>
                 </Row>
             </Container>
@@ -26,4 +26,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default NewsLayout;

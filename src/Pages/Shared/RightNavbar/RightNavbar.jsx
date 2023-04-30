@@ -19,7 +19,7 @@ const RightNavbar = () => {
                     <ListGroup.Item><FaInstagram /> Instagram</ListGroup.Item>
                 </ListGroup>
             </div>
-            <div className='bg-secondary my-2 py-3'>
+            <div className='bg-light my-2 py-3 px-1'>
                 <h5>Q-Zone</h5>
                 <Qzone></Qzone>
 
