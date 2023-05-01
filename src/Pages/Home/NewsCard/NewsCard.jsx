@@ -46,10 +46,7 @@ const NewsCard = ({ category }) => {
                 <div>
                     <FaEye></FaEye>
                     <span className='ps-2'>{total_view}</span>
-
-
                 </div>
-
             </Card.Footer>
         </Card>
     );

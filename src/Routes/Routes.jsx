@@ -5,7 +5,9 @@ import Category from "../Pages/Home/Category";
 
 import NewsLayout from "../Layouts/NewsLayout";
 import News from "../Pages/News/News/News";
-import { FaThemeco } from "react-icons/fa";
+import Login from "../Pages/Home/Account/Login/Login";
+import Register from "../Pages/Home/Account/Register/Register";
+
 
 const router = createBrowserRouter([
     {
@@ -16,6 +18,7 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
             },
+
             {
                 path: "/category/:id",
                 element: <Category></Category>,
@@ -31,7 +34,15 @@ const router = createBrowserRouter([
             element: <News></News>,
             loader: ({ params }) => fetch(`http://localhost:3000/news/${params.id}`)
         }]
-    }
+    },
+    {
+        path: '/login',
+        element: <Login></Login>,
+    },
+    {
+        path: '/register',
+        element: <Register></Register>,
+    },
 ]);
 
 export default router;
