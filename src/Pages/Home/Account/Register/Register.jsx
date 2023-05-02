@@ -4,9 +4,11 @@ import NavigationBar from '../../../Shared/NavigationBar/NavigationBar';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { authContext } from '../../../../AuthProvider/AuthProvider';
+import { useState } from 'react';
 
 const Register = () => {
     const { register } = useContext(authContext)
+    const [accept, setAccept] = useState(false)
 
     const handleRegistration = (event) => {
         event.preventDefault();
@@ -15,6 +17,11 @@ const Register = () => {
         const password = form.password.value;
         register(email, password)
             .catch(error => { alert(error) });
+
+    }
+
+    const handleCheckBox = (event) => {
+        setAccept(event.target.checked);
 
     }
 
@@ -42,9 +49,9 @@ const Register = () => {
                         <Form.Control type="password" placeholder="Password" name='password' />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label='terms and condition' />
+                        <Form.Check type="checkbox" name='checkbox' onClick={handleCheckBox} label='terms and condition' />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" disabled={!accept}>
                         Register
                     </Button>
                     <br></br>

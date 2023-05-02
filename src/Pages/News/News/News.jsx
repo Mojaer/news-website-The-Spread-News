@@ -6,7 +6,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 const News = () => {
     const news = useLoaderData()
     const { title, image_url, details, _id, author, rating, total_view, category_id } = news
-    console.log(title)
+    // console.log(title)
     return (
         <>
             <Card >

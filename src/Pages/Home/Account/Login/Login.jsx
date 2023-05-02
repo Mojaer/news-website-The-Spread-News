@@ -1,15 +1,17 @@
 import React from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import NavigationBar from '../../../Shared/NavigationBar/NavigationBar';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { authContext } from '../../../../AuthProvider/AuthProvider';
 
 
 const Login = () => {
-    const { user, login } = useContext(authContext)
-
-    // console.log(user)
+    const { login } = useContext(authContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/';
+    console.log(from)
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -18,6 +20,7 @@ const Login = () => {
         const password = form.password.value;
         login(email, password)
             .catch((error) => alert(error.message))
+        navigate(from)
 
     }
 
