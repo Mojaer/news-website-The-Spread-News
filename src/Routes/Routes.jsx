@@ -23,7 +23,7 @@ const router = createBrowserRouter([
             {
                 path: "/category/:id",
                 element: <Category></Category>,
-                loader: ({ params }) => fetch(`http://localhost:3000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://news-server-mojaer.vercel.app/categories/${params.id}`)
             }
         ],
     },
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         children: [{
             path: ':id',
             element: <PrivateRoute><News></News></PrivateRoute>,
-            loader: ({ params }) => fetch(`http://localhost:3000/news/${params.id}`)
+            loader: ({ params }) => fetch(`https://news-server-mojaer.vercel.app/news/${params.id}`)
         }]
     },
     {

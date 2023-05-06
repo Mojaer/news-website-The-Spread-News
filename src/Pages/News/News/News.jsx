@@ -2,8 +2,10 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../../useTitle/useTitle';
 
 const News = () => {
+    useTitle('News')
     const news = useLoaderData()
     const { title, image_url, details, _id, author, rating, total_view, category_id } = news
     // console.log(title)

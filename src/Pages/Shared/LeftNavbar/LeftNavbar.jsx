@@ -5,7 +5,7 @@ const LeftNavbar = () => {
     const [category, setCategory] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3000/categories')
+        fetch('https://news-server-mojaer.vercel.app/categories')
             .then(response => response.json())
             .then(data => setCategory(data))
     }, [])

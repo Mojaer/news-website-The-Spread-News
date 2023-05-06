@@ -27,7 +27,7 @@ const Header = () => {
             </div>
 
 
-        </Container >
+        </Container>
 
 
     );

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { authContext } from '../../../../AuthProvider/AuthProvider';
 import { useState } from 'react';
+import useTitle from '../../../../useTitle/useTitle';
 
 const Register = () => {
     const { register } = useContext(authContext)
@@ -24,6 +25,7 @@ const Register = () => {
         setAccept(event.target.checked);
 
     }
+    useTitle('Register')
 
     return (
         <Container >

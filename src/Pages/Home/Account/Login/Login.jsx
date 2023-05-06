@@ -4,6 +4,7 @@ import NavigationBar from '../../../Shared/NavigationBar/NavigationBar';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { authContext } from '../../../../AuthProvider/AuthProvider';
+import useTitle from '../../../../useTitle/useTitle';
 
 
 const Login = () => {
@@ -24,7 +25,7 @@ const Login = () => {
 
     }
 
-
+    useTitle('login')
     return (
         <Container >
             <NavigationBar></NavigationBar>

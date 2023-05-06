@@ -5,8 +5,11 @@ import { Col, Container, Row } from 'react-bootstrap';
 import LeftNavbar from '../Pages/Shared/LeftNavbar/LeftNavbar';
 import RightNavbar from '../Pages/Shared/RightNavbar/RightNavbar';
 import { Outlet } from 'react-router-dom';
+import useTitle from '../useTitle/useTitle';
 
 const NewsLayout = () => {
+
+    useTitle('News Layout');
     return (
         <div>
             <Header></Header>
